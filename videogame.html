@@ -1,0 +1,50 @@
+<DOCTYPE! html>
+<html>
+<head>
+<script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+  <script language="javascript" src="javascripts/jquery.hotkeys.js"
+  type="text/javascript"></script>
+  <script language="javascript" src="javascripts/key_status.js"
+  type="text/javascript"></script>
+  <script language="javascript" src="javascripts/util.js"
+  type="text/javascript"></script>
+  <script language="javascript" src="javascripts/sprite.js"
+  type="text/javascript"></script>
+  <script language="javascript" src="javascripts/sound.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1>Alien>9</h1>
+
+<script type="text/javascript">
+
+var CANVAS_WIDTH = 480;
+var CANVAS_HEIGHT = 320;
+var FPS = 30;
+var player = {
+color: "#00a996",
+x; 50,
+y: 27,
+width: 20,
+height: 30,
+draw: function() {
+canvas.fillStyle = this.color;
+canvas.fillRect(this.x, this.y, this.width, this.height);
+}
+};
+
+var playerBullets = [ ];
+
+function Bullet(I) {
+I.activate = true;
+
+l.xVelocity = 0;
+I.yVelocity = -I.speed;
+I.width = 3;
+I.height = 3;
+I.color = "#000";
+
+I.inBounds = function() {
+return I.x >= 0 && I.x <= CANVAS_WIDTH &&
+l.y >= 0 && l.y <= CANVAS_HEIGHT;
+};
